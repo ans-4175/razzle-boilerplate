@@ -3,7 +3,9 @@ import { useQuery, useInfiniteQuery } from 'react-query';
 import { fetchRandom } from './api/profiles';
 // import { useParams } from 'react-router-dom';
 import { sendEvent } from './libs/ga-analytics';
-// import { WiredButton, WiredCard } from 'wired-elements-react';
+
+// error on esm import
+const { WiredButton, WiredCard } = require('wired-elements-react');
 
 function Home() {
   // const [lastDirection, setLastDirection] = useState('');
@@ -29,13 +31,13 @@ function Home() {
         <p>Error: {error.message}</p>
       ) : (
         <>
-          {/* <WiredCard elevation={3} ref={boxCard}> */}
+          <WiredCard elevation={3} ref={boxCard}>
             <section>
-              <button onClick={() => onButton()}>
+              <WiredButton elevation={2} onClick={() => onButton()}>
                 Click Me
-              </button>
+              </WiredButton>
             </section>
-          {/* </WiredCard> */}
+          </WiredCard>
         </>
       )}
     </div>
