@@ -3,7 +3,7 @@ import { useQuery, useInfiniteQuery } from 'react-query';
 import { fetchRandom } from './api/profiles';
 // import { useParams } from 'react-router-dom';
 import { sendEvent } from './libs/ga-analytics';
-import { WiredButton, WiredCard } from 'wired-elements-react';
+// import { WiredButton, WiredCard } from 'wired-elements-react';
 
 function Home() {
   // const [lastDirection, setLastDirection] = useState('');
@@ -29,13 +29,13 @@ function Home() {
         <p>Error: {error.message}</p>
       ) : (
         <>
-          <WiredCard elevation={3} ref={boxCard}>
+          {/* <WiredCard elevation={3} ref={boxCard}> */}
             <section>
-              <WiredButton elevation={2} onClick={() => onButton()}>
+              <button onClick={() => onButton()}>
                 Click Me
-              </WiredButton>
+              </button>
             </section>
-          </WiredCard>
+          {/* </WiredCard> */}
         </>
       )}
     </div>
