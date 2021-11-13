@@ -3,46 +3,43 @@ import { useQuery, useInfiniteQuery } from 'react-query';
 import { fetchRandom } from './api/profiles';
 // import { useParams } from 'react-router-dom';
 import { sendEvent } from './libs/ga-analytics';
-import { WiredButton, WiredCard }  from 'wired-elements-react';
+import { WiredButton, WiredCard } from 'wired-elements-react';
 
-function Home () {
+function Home() {
   // const [lastDirection, setLastDirection] = useState('');
   const boxCard = useRef({});
-  
-  const { data, error, isLoading, isError, isFetching, refetch } = useQuery(
-    ['profiles'],
-    () => fetchRandom(),
-  )
+
+  const { data, error, isLoading, isError, isFetching, refetch } = useQuery(['profiles'], () => fetchRandom());
 
   const onButton = () => {
-    console.log("Hit Button");
-    
+    console.log('Hit Button');
+
     sendEvent({
       category: 'interaction',
       action: `button`,
       label: 'hit'
     });
-  }
+  };
 
   return (
     <div>
-      { isLoading ? (
+      {isLoading ? (
         <p>Loading...</p>
       ) : isError ? (
         <p>Error: {error.message}</p>
       ) : (
         <>
-        <WiredCard elevation={3} ref={boxCard}>
-          <section>
-            <WiredButton elevation={2} onClick={() => onButton()}>
-              Click Me
-            </WiredButton>
-          </section>
-        </WiredCard>
+          <WiredCard elevation={3} ref={boxCard}>
+            <section>
+              <WiredButton elevation={2} onClick={() => onButton()}>
+                Click Me
+              </WiredButton>
+            </section>
+          </WiredCard>
         </>
       )}
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;

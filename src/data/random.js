@@ -1,11 +1,11 @@
 const axios = require('axios');
 
 const getFakeData = async () => {
-    const resp = await axios('https://jsonplaceholder.typicode.com/todos/1');
+  const resp = await axios('https://jsonplaceholder.typicode.com/todos/1');
 
-    return resp.data;
-}
+  return resp.data;
+};
 
 module.exports = {
-    getFakeData
-}
+  getFakeData
+};

@@ -31,7 +31,6 @@ wired-button.btn-copy {
 wired-input {
   width: 200px;
   /* font-family: inherit; */
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
   letter-spacing: 0.5em;
 }
